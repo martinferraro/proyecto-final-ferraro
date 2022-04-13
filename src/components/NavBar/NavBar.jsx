@@ -3,8 +3,7 @@ import './NavBar.css';
 
 function NavBar() {
     return <>
-        <NavBar />
-        <h6>Prueba de encabezado</h6>
+        <h2>Prueba de encabezado</h2>
     </>;
 }
 
