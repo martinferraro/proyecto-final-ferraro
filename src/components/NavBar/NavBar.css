@@ -1,3 +1,33 @@
-h6 {
-    color: black;
+/* CSS RESET */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #9797b9;
+}
+
+.brand {
+    color: white;
+    padding: .8rem;
+}
+
+.navMenu {
+    display: flex;
+    list-style: none;
+}
+
+.menuItem {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem 0 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+.menuItem:hover {
+    background-color: #74748e;
 }
