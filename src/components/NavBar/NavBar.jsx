@@ -1,16 +1,19 @@
 import React from 'react';
 import './NavBar.css';
+import logo from '../assets/df_logo_icono.svg';
+import Button from '../Button/Button';
 
-function NavBar() {
+function NavBar(props) {
     return (
         <nav className='navBar'>
-            <h3 className='brand'>Nombre tienda</h3>
+            <a className='contLogo' href=""><img className='logoNav' src={logo} alt='Daniela Ferraro'/></a>
             <ul className='navMenu'>
-                <a class="menuItem" href="">CATEGORIA 1</a>
-                <a class="menuItem" href="">CATEGORIA 1</a>
-                <a class="menuItem" href="">CATEGORIA 1</a>
-                <a class="menuItem" href="">CATEGORIA 1</a>
+                <li><a className="menuItem" href="">Maquillaje</a></li>
+                <li><a className="menuItem" href="">Skin Care</a></li>
+                <li><a className="menuItem" href="">Cabello</a></li>
+                <li><a className="menuItem" href="">Productos LACA</a></li>
             </ul>
+            <Button txt='Login'/>
         </nav>
     );
 }

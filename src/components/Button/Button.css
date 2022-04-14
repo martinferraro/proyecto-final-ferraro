@@ -1,0 +1,16 @@
+.btnGeneral {
+    background-color: #74748e;
+    border: none;
+    border-radius: 2rem;
+    padding: .5rem 1rem .5rem 1rem;
+    margin-right: 1rem;
+    color: white;
+    font-size: .8rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: .2rem;
+}
+
+.btnGeneral:hover {
+    background-color: #9bb992;
+}
