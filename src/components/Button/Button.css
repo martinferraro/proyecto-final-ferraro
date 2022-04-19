@@ -9,8 +9,10 @@
     font-weight: bold;
     text-decoration: none;
     letter-spacing: .2rem;
+    transition: all .2s ease-in-out;
 }
 
 .btnGeneral:hover {
+    color: white;
     background-color: #9bb992;
 }
