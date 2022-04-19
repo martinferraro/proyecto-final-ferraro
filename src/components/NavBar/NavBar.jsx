@@ -3,7 +3,6 @@ import './NavBar.css';
 import logo from '../../assets/df_logo_icono.svg';
 import Button from '../Button/Button';
 import CartWidget from '../CartWidget/CartWidget';
-import ItemListContainer from '../ItemListContainer/ItemListContainer';
 
 function NavBar(props) {
     return (
