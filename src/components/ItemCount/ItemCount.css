@@ -1,0 +1,13 @@
+.btnAddSub {
+    background-color: #74748e;
+    border: none;
+    border-radius: .2rem;
+    color: white;
+    font-size: 1rem;
+    transition: all .2s ease-in-out;
+}
+
+.btnAddSub > .bi {
+    display: flex;
+    padding: .7rem 1rem .7rem 1rem;
+}
