@@ -3,7 +3,7 @@ import './CartWidget.css';
 
 function CartWidget() {
     return (
-        <a className='cartWidgetCont' href=""><i class="cartWidget bi bi-cart-fill d-flex align-items-center me-3"></i></a>
+        <a className='cartWidgetCont' href=""><i className="cartWidget bi bi-cart-fill d-flex align-items-center me-3"></i></a>
     )
 }
 

@@ -1,0 +1,20 @@
+h5 {
+    color: #74748e;
+}
+
+.btnAddSub {
+    background-color: #74748e;
+    border: none;
+    border-radius: .2rem;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: .2rem;
+    transition: all .2s ease-in-out;
+}
+
+.btnAddSub:hover {
+    color: white;
+    background-color: #9bb992;
+}
