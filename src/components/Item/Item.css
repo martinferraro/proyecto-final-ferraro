@@ -2,6 +2,10 @@ h5 {
     color: #74748e;
 }
 
+.itemCard {
+    width: 19rem;
+}
+
 .btnAddSub {
     background-color: #74748e;
     border: none;

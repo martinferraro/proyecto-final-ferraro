@@ -3,7 +3,7 @@ import './Item.css'
 
 function Item ({ item }) {
     return <>
-        <div className='item card col-3 p-1 shadow'>
+        <div className='itemCard card shadow mt-2'>
             <img src={ item?.pictureUrl } className='card-img-top img-fluid' alt='Imagen producto'/>
             <div className='card-body d-flex flex-column justify-content-end'>
                 <h5 className='card-title'>{ item?.title }</h5>

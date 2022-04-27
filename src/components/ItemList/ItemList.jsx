@@ -3,7 +3,7 @@ import Item from '../Item/Item'
 
 function ItemList ({ items }) {
     return <>
-        <div className='itemList container-fluid row m-0 p-2'>
+        <div className='itemList d-flex justify-content-between row m-0 px-2 pb-2'>
             {items.map(item => <Item item={ item } key={ item.id } />)}
         </div>
     </>
