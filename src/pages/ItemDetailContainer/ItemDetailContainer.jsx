@@ -6,7 +6,7 @@ import ItemDetail from '../../components/ItemDetail/ItemDetail'
 function ItemDetailContainer () {
     const [item, setItem] = useState({});
     const { id } = useParams();
-    
+
     useEffect(() => {
         getItem(id)
             .then(res => {
@@ -16,7 +16,7 @@ function ItemDetailContainer () {
 
     return <>
     <div className='itemDetailContainer'>
-        <ItemDetail items={ item } />
+        <ItemDetail item={ item } />
     </div>
 </>
 }
