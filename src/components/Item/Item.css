@@ -6,6 +6,16 @@ h5 {
     width: 19rem;
 }
 
+.imgCard {
+    height: 15rem;
+    width: auto
+}
+
+.card-img-top {
+    height: 100%;
+    width: auto;
+}
+
 .btnAddSub {
     background-color: #74748e;
     border: none;

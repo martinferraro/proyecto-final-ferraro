@@ -1,5 +1,5 @@
-import React, { useState, useEffect }  from "react"
-import getItem from "../GetItem/GetItem"
+import React, { useState, useEffect }  from 'react'
+import getItem from '../GetItem/GetItem'
 import ItemDetail from '../ItemDetail/ItemDetail'
 
 function ItemDetailContainer () {
