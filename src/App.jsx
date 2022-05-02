@@ -3,19 +3,18 @@ import React from 'react'
 import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Catalogo from './pages/Catalogo'
-import Detalle from './pages/Detalle'
+import Home from './pages/home'
+import Category from './pages/category'
+import ItemPage from './pages/item'
 
 function App() {
   return <>
-    <Routes>
-      <Route path='/home' element={<Home/>} />
-      <Route path='/catalogo' element={<Catalogo/>} />
-      <Route path='/detalle' element={<Detalle/>} />
-    </Routes>
     <NavBar />
-    <ItemListContainer txt = 'Prueba contador'/>
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/category/:category' element={<Category />} />
+      <Route path='/item/:id' element={<ItemPage />} />
+    </Routes>
   </>
 }
 

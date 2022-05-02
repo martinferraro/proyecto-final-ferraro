@@ -1,5 +1,6 @@
 import React from 'react'
 import './Item.css'
+import { Link } from 'react-router-dom'
 
 function Item ({ item }) {
     return <>
@@ -10,7 +11,7 @@ function Item ({ item }) {
                 <div className='d-flex justify-content-end mb-3'>
                     <p className='card-text'>Precio: ${ item?.price }</p>
                 </div>
-                <a href='#' className='btnAddSub p-2 px-3'>Ver detalle</a>
+                <Link className='btnAddSub p-2 px-3' to={{pathname: `/item/${item.id}`}}>Ver detalle</Link>
             </div>
         </div>
     </>

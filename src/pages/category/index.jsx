@@ -2,10 +2,10 @@ import React from 'react'
 import ItemListContainer from '../../components/ItemListContainer/ItemListContainer'
 import { Routes, Route } from 'react-router-dom'
 
-function Home () {
+function Category () {
     return <>
-        <ItemListContainer />
+        {/* <ItemListContainer /> */}
     </>
 }
 
-export default Home
+export default Category
