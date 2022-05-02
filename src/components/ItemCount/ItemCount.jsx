@@ -1,11 +1,11 @@
-import './ItemCount.css'
 import React, { useState } from 'react'
+import './ItemCount.css'
 
-function ItemCount({ stock, initial,  onAdd }) {
+function ItemCount({ stock, initial = 1,  onAdd }) {
     const [count, setCount] = useState(initial)
     const [stockVar, setStock] = useState(stock)
     const [isDisabled, setDisabled] = useState(false)
-
+    
     function onAdd() {
         if (count < stockVar > 0) {
             console.log(count + ' añadidas al carrito')
