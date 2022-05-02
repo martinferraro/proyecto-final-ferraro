@@ -1,5 +1,5 @@
-import './ItemCount.css';
-import React, { useState } from 'react';
+import './ItemCount.css'
+import React, { useState } from 'react'
 
 function ItemCount({ stock, initial,  onAdd }) {
     const [count, setCount] = useState(initial)
@@ -40,11 +40,11 @@ function ItemCount({ stock, initial,  onAdd }) {
     }
 
     return <>
-        <div className='d-flex flex-column col-2'>
+        <div className='d-flex flex-column'>
             <div className='d-flex flex-row align-items-center justify-content-between mb-2'>
-                <button className='btnAddSub' onClick={() => restaCant()} disabled={isDisabled}><i class='bi bi-dash-circle-fill'/></button>
+                <button className='btnAddSub' onClick={() => restaCant()} disabled={isDisabled}><i className='bi bi-dash-circle-fill'/></button>
                 <p className='m-0 mx-3'>{count}</p>
-                <button className='btnAddSub' onClick={() => sumaCant()} disabled={isDisabled}><i class='bi bi-plus-circle-fill'/></button>
+                <button className='btnAddSub' onClick={() => sumaCant()} disabled={isDisabled}><i className='bi bi-plus-circle-fill'/></button>
             </div>
             <button className='btnAddSub p-2' onClick={() => onAdd()} disabled={isDisabled}>Agregar al Carrito</button>
         </div>

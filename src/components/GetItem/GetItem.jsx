@@ -1,13 +1,12 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
 import dbProducts from '../../assets/dbProducts.js'
 
-function getItem() {
+function getItem(id) {
     const myPromise = new Promise((resolve, reject) => {
-        const { idSel } = useParams()
-        const selProd = dbProducts.find(prod => prod.id === idSel)
+        const item = dbProducts.filter(item => item.id === parseInt(id))
+        console.log(item)
         setTimeout(() => {
-            resolve(selProd);
+            resolve(item[0]); /* Devuelvo 1 único ítem de la lista (que de por sí tiene 1 solo ítem) */
         }, 2000);
     });
     return myPromise;
