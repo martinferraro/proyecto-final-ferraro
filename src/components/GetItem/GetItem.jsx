@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import dbProducts from '../../db/dbProducts'
+import dbProducts from '../../assets/dbProducts.js'
 
 function getItem() {
     const myPromise = new Promise((resolve, reject) => {

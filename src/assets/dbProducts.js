@@ -2,7 +2,7 @@ export default [
     {
         id: 1,
         title:'Crema Facial Uso Diario 275ml',
-        category:'Piel',
+        category:'piel',
         price: 3200,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -11,7 +11,7 @@ export default [
     {
         id: 2,
         title:'Crema Facial Uso Diario 125ml',
-        category:'Piel',
+        category:'piel',
         price: 2200,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -20,7 +20,7 @@ export default [
     {
         id: 3,
         title:'Crema Facial Rejuvenecedora 125ml',
-        category:'Piel',
+        category:'piel',
         price: 2900,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -29,7 +29,7 @@ export default [
     {
         id: 4,
         title:'Crema Corporal Hidratante 320ml',
-        category:'Piel',
+        category:'piel',
         price: 2800,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -38,7 +38,7 @@ export default [
     {
         id: 5,
         title:'Crema Corporal Urea 275ml',
-        category:'Piel',
+        category:'piel',
         price: 3100,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -46,8 +46,8 @@ export default [
     },
     {
         id: 6,
-        title:'Base Maquillaje 35g',
-        category:'Maquillaje',
+        title:'Base maquillaje 35g',
+        category:'maquillaje',
         price: 1250,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -55,8 +55,8 @@ export default [
     },
     {
         id: 7,
-        title:'Base Maquillaje 60g',
-        category:'Maquillaje',
+        title:'Base maquillaje 60g',
+        category:'maquillaje',
         price: 2000,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -65,7 +65,7 @@ export default [
     {
         id: 8,
         title:'Rimmel Profesional 80cc',
-        category:'Maquillaje',
+        category:'maquillaje',
         price: 2750,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -74,7 +74,7 @@ export default [
     {
         id: 9,
         title:'Rimmel Profesional 40cc',
-        category:'Maquillaje',
+        category:'maquillaje',
         price: 1900,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -83,7 +83,7 @@ export default [
     {
         id: 10,
         title:'Labial Rojo Pasión',
-        category:'Maquillaje',
+        category:'maquillaje',
         price: 2100,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -92,7 +92,7 @@ export default [
     {
         id: 11,
         title:'Labial Verde Esmeralda',
-        category:'Maquillaje',
+        category:'maquillaje',
         price: 2100,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -101,7 +101,7 @@ export default [
     {
         id: 12,
         title:'Labial Rojo Carmesí',
-        category:'Maquillaje',
+        category:'maquillaje',
         price: 2250,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -110,7 +110,7 @@ export default [
     {
         id: 13,
         title:'Labial Rosa Eighties',
-        category:'Maquillaje',
+        category:'maquillaje',
         price: 2000,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -119,7 +119,7 @@ export default [
     {
         id: 14,
         title:'Shampoo + Acondicionador 175ml',
-        category:'Cabello',
+        category:'cabello',
         price: 900,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -128,7 +128,7 @@ export default [
     {
         id: 15,
         title:'Shampoo Anticaspa 220ml',
-        category:'Cabello',
+        category:'cabello',
         price: 650,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -137,7 +137,7 @@ export default [
     {
         id: 16,
         title:'Crema de Enjuague 220ml',
-        category:'Cabello',
+        category:'cabello',
         price: 1550,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -146,7 +146,7 @@ export default [
     {
         id: 17,
         title:'Aceite Masajeador Capilar 75ml',
-        category:'Cabello',
+        category:'cabello',
         price: 1100,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -155,7 +155,7 @@ export default [
     {
         id: 18,
         title:'Protector Solar FPS30 175ml',
-        category:'Protectores',
+        category:'protectores',
         price: 1750,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -164,7 +164,7 @@ export default [
     {
         id: 19,
         title:'Protector Solar FPS50 175ml',
-        category:'Protectores',
+        category:'protectores',
         price: 1350,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',
@@ -173,7 +173,7 @@ export default [
     {
         id: 20,
         title:'Protector Solar Pantalla FPS60 175ml',
-        category:'Protectores',
+        category:'protectores',
         price: 2100,
         stock: 10,
         description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis earum velit rerum quasi. Autem voluptates facere, harum alias similique expedita rerum laudantium? Quidem dolores culpa nisi obcaecati nesciunt velit.',

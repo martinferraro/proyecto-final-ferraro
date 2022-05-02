@@ -1,9 +1,9 @@
-import React from 'react';
-import bdProducts from '../../db/dbProducts';
+import React from 'react'
+import dbProducts from '../../assets/dbProducts.js';
 
 function getProducts() {
     const myPromise = new Promise((resolve, reject) => {
-        const productList = bdProducts
+        const productList = dbProducts
         setTimeout(() => {
             resolve(productList);
         }, 2000);
