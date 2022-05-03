@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function Item ({ item }) {
     return <>
-        <div className='itemCard card shadow mt-2'>
+        <div className='itemCard card shadow my-2 mx-1'>
             <div className='imgCard d-flex justify-content-center'>
                 <img src={ item?.pictureUrl } className='card-img-top img-fluid' alt='Imagen producto'/>
             </div>

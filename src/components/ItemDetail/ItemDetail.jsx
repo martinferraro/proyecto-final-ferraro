@@ -14,7 +14,7 @@ function ItemDetail ({ item }) {
                 <div className='d-flex flex-column align-items-center'>
                     <h5 className='card-text pb-4'>Precio: ${ item?.price }</h5>
                     <div className='col-7'>
-                        <ItemCount initial={ 1 } stock={ item?.stock } />
+                        <ItemCount stock={ item?.stock } initial={ 1 } />
                     </div>
                 </div>
                 
