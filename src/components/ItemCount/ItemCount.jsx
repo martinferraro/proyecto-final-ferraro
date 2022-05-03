@@ -3,32 +3,30 @@ import './ItemCount.css'
 
 function ItemCount({ stock, initial }) {
     const [count, setCount] = useState(initial)
-    const [stockVar, setStock] = useState(stock)
     const [isDisabled, setDisabled] = useState(false)
-    
+
     function onAdd() {
-        if (count < stockVar && stockVar > 0) {
+        if (count < stock && stock > 0) {
             console.log(count + ' añadidas al carrito')
-            console.log((stockVar - count) + ' en stock')
-            setStock(stockVar - count)
+            console.log((stock - count) + ' en stock')
             setCount(1)
-        } else if (count > stockVar && stockVar > 0) {
-            console.log(stockVar + ' añadidas al carrito')
+        } else if (count > stock && stock > 0) {
+            console.log(stock + ' añadidas al carrito')
             console.log('Stock agotado')
-            setStock(0)
+            stock = 0
             setCount(0)
             setDisabled(true)
         } else {
             console.log(count + ' añadidas al carrito')
             console.log('Stock agotado')
-            setStock(0)
+            stock = 0
             setCount(0)
             setDisabled(true)
         }
     }
 
     function sumaCant() {
-        if (count < stockVar) {
+        if (count < stock) {
             setCount(count + 1)
         }
     }

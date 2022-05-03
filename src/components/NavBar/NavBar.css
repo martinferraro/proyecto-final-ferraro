@@ -39,4 +39,5 @@
 .menuItem:hover {
     color: white;
     background-color: #74748e;
+    cursor: pointer;
 }

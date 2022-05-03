@@ -31,4 +31,5 @@ h4, h5, h6 {
 .btnAddSub:hover {
     color: white;
     background-color: #9bb992;
+    cursor: pointer;
 }
