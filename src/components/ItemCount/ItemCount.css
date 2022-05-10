@@ -7,6 +7,14 @@
     transition: all .2s ease-in-out;
 }
 
+a {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
 .btnAddSub > .bi {
     display: flex;
     padding: .7rem 1rem .7rem 1rem;
@@ -15,4 +23,8 @@
 
 .btnAddSub:hover {
     cursor: pointer;
+}
+
+.btnAddSub > a {
+    text-decoration: none;
 }

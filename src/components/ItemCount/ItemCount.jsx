@@ -1,29 +1,8 @@
 import React, { useState } from 'react'
 import './ItemCount.css'
 
-function ItemCount({ stock, initial }) {
+function ItemCount({ stock, initial, onAdd }) {
     const [count, setCount] = useState(initial)
-    const [isDisabled, setDisabled] = useState(false)
-
-    function onAdd() {
-        if (count < stock && stock > 0) {
-            console.log(count + ' añadidas al carrito')
-            console.log((stock - count) + ' en stock')
-            setCount(1)
-        } else if (count > stock && stock > 0) {
-            console.log(stock + ' añadidas al carrito')
-            console.log('Stock agotado')
-            stock = 0
-            setCount(0)
-            setDisabled(true)
-        } else {
-            console.log(count + ' añadidas al carrito')
-            console.log('Stock agotado')
-            stock = 0
-            setCount(0)
-            setDisabled(true)
-        }
-    }
 
     function sumaCant() {
         if (count < stock) {
@@ -40,11 +19,11 @@ function ItemCount({ stock, initial }) {
     return <>
         <div className='d-flex flex-column'>
             <div className='d-flex flex-row align-items-center justify-content-between mb-2'>
-                <button className='btnAddSub' onClick={() => restaCant()} disabled={isDisabled}><i className='bi bi-dash-circle-fill'/></button>
+                <button className='btnAddSub' onClick={() => restaCant()}><i className='bi bi-dash-circle-fill'/></button>
                 <p className='m-0 mx-3'>{count}</p>
-                <button className='btnAddSub' onClick={() => sumaCant()} disabled={isDisabled}><i className='bi bi-plus-circle-fill'/></button>
+                <button className='btnAddSub' onClick={() => sumaCant()}><i className='bi bi-plus-circle-fill'/></button>
             </div>
-            <button className='btnAddSub p-2' onClick={() => onAdd()} disabled={isDisabled}>Agregar al Carrito</button>
+            <button className='btnAddSub p-2' onClick={() => (count <= stock) && onAdd(count)}>Agregar al Carrito</button>
         </div>
     </>
 }

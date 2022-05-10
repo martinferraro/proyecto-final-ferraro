@@ -1,5 +1,5 @@
 import React from 'react'
-import dbProducts from '../../assets/dbProducts.js';
+import dbProducts from '../../assets/dbProducts.js'
 
 function getProducts(category) {
     const myPromise = new Promise((resolve, reject) => {
