@@ -4,6 +4,7 @@ const CartContext = createContext({
     products: [],
     addItem: () => {},
     removeItem: () => {},
+    removeItemComplete: () => {},
     clear: () => {},
     isInCart: () => {},
     cartQty: () => {}
@@ -32,6 +33,15 @@ export const CartContextProvider = ({ children }) => {
         }
     }
 
+    const removeItemComplete = (id) => {
+        const itemIndexRemove = productList.findIndex(item => item.id === id);
+        if (itemIndexRemove === -1) {
+            return console.log('El item no se encuentra en el carrito');
+        } else {
+            setProductList(productList.filter(i => i.id !== id))
+        }
+    }
+
     const clear = () => {
         setProductList([])    
     }
@@ -52,6 +62,7 @@ export const CartContextProvider = ({ children }) => {
                 clear,
                 addItem,
                 removeItem,
+                removeItemComplete,
                 isInCart,
                 cartQty
             }}>
