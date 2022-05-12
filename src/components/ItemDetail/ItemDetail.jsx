@@ -8,7 +8,7 @@ function ItemDetail ({ item }) {
     const cartCtxt = useContext(CartContext)
 
     function addHandler(quantityToAdd) {
-        cartCtxt.addItem({quantity: quantityToAdd, ...item})
+        cartCtxt.addItem({ quantity: quantityToAdd, ...item })
     }
 
     return <>
@@ -23,26 +23,26 @@ function ItemDetail ({ item }) {
                     <div className='d-flex flex-column align-items-center'>
                         <h5 className='card-text pb-4'>Precio: ${ item?.price }</h5>
                         <div className=''>
-                            <ItemCount stock={ item?.stock } initial={ 1 } onAdd={addHandler} />
+                            <ItemCount stock={ item?.stock } initial={ 1 } onAdd={ addHandler } />
                             <div className='d-flex mt-2'>
-                                <div>
-                                    <button className='btnAddSub p-2 mb-2' onClick={() => console.log(cartCtxt.isInCart(item.id))} >En Carrito</button>
-                                    <button className='btnAddSub p-2 mb-2' onClick={() => console.log(cartCtxt.cartQty())} >Total en carrito</button>
-                                    <button className='btnAddSub p-2 mb-2' onClick={() => console.log(cartCtxt.products)} >Imprimir Carrito</button>
+                                <div className='w-100 me-1'>
+                                    <button className='btnAddSub p-2 mb-2 w-100' onClick={() => console.log(cartCtxt.isInCart(item.id))} >En Carrito</button>
+                                    <button className='btnAddSub p-2 mb-2 w-100' onClick={() => console.log(cartCtxt.cartQty())} >Total en Carrito</button>
+                                    <button className='btnAddSub p-2 mb-2 w-100' onClick={() => console.log(cartCtxt.products)} >Imprimir Carrito</button>
                                 </div>
-                                <div>
-                                    <button className='btnAddSub p-2 mb-2' onClick={() => cartCtxt.removeItem(item.id)} >Remover 1 Unidad</button>
-                                    <button className='btnAddSub p-2 mb-2' onClick={() => cartCtxt.removeItemComplete(item.id)} >Remover Item</button>
-                                    <button className='btnAddSub p-2 mb-2' onClick={() => cartCtxt.clear()} >Vaciar Carrito</button>
+                                <div className='w-100 ms-1'>
+                                    <button className='btnAddSub p-2 mb-2 w-100' onClick={() => cartCtxt.removeItem(item.id)} >Remover 1U</button>
+                                    <button className='btnAddSub p-2 mb-2 w-100' onClick={() => cartCtxt.removeItemComplete(item.id)} >Remover Item</button>
+                                    <button className='btnAddSub p-2 mb-2 w-100' onClick={() => cartCtxt.clear()} >Vaciar Carrito</button>
                                 </div>
                             </div>
                             
-                            {cartCtxt.products.length &&
+                            {cartCtxt.products.length ?
                                 <button className='btnAddSub p-2 w-100'>
                                     <Link to={'/cart'}>
                                         Finalizar compra ({ cartCtxt.cartQty() } items)
                                     </Link>
-                                </button>
+                                </button> : null
                             }
                         </div>
                     </div>

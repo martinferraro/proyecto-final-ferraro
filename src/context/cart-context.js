@@ -43,7 +43,7 @@ export const CartContextProvider = ({ children }) => {
     }
 
     const clear = () => {
-        setProductList([])    
+        setProductList([])
     }
 
     const isInCart = (id) => {
