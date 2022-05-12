@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
+import CartContext from '../../context/cart-context'
 import '../ItemCount/ItemCount.css'
 
 function ItemDetail ({ item }) {
-    const [cantidadProd, setCantidadProd] = useState(null);
+    const cartCtxt = useContext(CartContext)
 
     function addHandler(quantityToAdd) {
-        setCantidadProd(quantityToAdd)
+        cartCtxt.addItem({quantity: quantityToAdd, ...item})
     }
 
     return <>
@@ -22,9 +23,18 @@ function ItemDetail ({ item }) {
                     <div className='d-flex flex-column align-items-center'>
                         <h5 className='card-text pb-4'>Precio: ${ item?.price }</h5>
                         <div className=''>
-                            {cantidadProd ?
-                                <button className='btnAddSub p-2'><Link to={'/cart'}>Finalizar compra <br/>({ cantidadProd } items)</Link></button> :
-                                <ItemCount stock={ item?.stock } initial={ 1 } onAdd={addHandler}/>
+                            <ItemCount stock={ item?.stock } initial={ 1 } onAdd={addHandler} />
+                            <button className='btnAddSub p-2' onClick={() => console.log(cartCtxt.products)} >Imprimir carrito</button>
+                            <button className='btnAddSub p-2' onClick={() => cartCtxt.removeItem(item.id)} >Remove product</button>
+                            <button className='btnAddSub p-2' onClick={() => cartCtxt.clear()} >Clear</button>
+                            <button className='btnAddSub p-2' onClick={() => console.log(cartCtxt.isInCart(item.id))} >Is in cart</button>
+                            <button className='btnAddSub p-2' onClick={() => console.log(cartCtxt.cartQty())} >Quantity</button>
+                            {cartCtxt.products.length &&
+                                <button className='btnAddSub p-2'>
+                                    <Link to={'/cart'}>
+                                        Finalizar compra <br/>({ cartCtxt.cartQty() } items)
+                                    </Link>
+                                </button>
                             }
                         </div>
                     </div>
