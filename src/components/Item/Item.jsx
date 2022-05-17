@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import CartContext from '../../context/cart-context'
 import './Item.css'
 import { Link } from 'react-router-dom'
 
 function Item ({ item }) {
+    const cartCtxt = useContext(CartContext)
+
     return <>
         <div className='itemCard card shadow mt-2 mx-1'>
             <div className='imgCard d-flex justify-content-center'>
@@ -14,6 +17,7 @@ function Item ({ item }) {
                     <p className='card-text'>Precio: ${ item?.price }</p>
                 </div>
                 <Link className='btnAddSub p-2 px-3' to={{pathname: `/item/${item.id}`}}>Ver detalle</Link>
+                
             </div>
         </div>
     </>

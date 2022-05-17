@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/df_logo_icono.svg'
-import ButtonSt1 from '../Button/ButtonSt1'
 import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
 
@@ -16,8 +15,7 @@ function NavBar() {
                 <Link className='menuItem' to={'/category/protectores'}>Protectores</Link>
             </ul>
             <div className='d-flex align-items-center'>
-                <ButtonSt1 txt='Login' />
-                <CartWidget />
+                    <CartWidget />
             </div>
         </nav>
     </>
