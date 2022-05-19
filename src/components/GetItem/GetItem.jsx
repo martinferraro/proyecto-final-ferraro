@@ -1,14 +1,9 @@
-import React from 'react'
-import dbProducts from '../../assets/dbProducts.js'
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
 
 function getItem(id) {
-    const myPromise = new Promise((resolve, reject) => {
-        const item = dbProducts.filter(item => item.id === parseInt(id))
-        setTimeout(() => {
-            resolve(item[0]); /* Devuelvo 1 único ítem de la lista (que de por sí tiene 1 solo ítem) */
-        }, 2000);
-    });
-    return myPromise;
+    const db = getFirestore()
+    const item = doc(db, 'items', id)
+    return getDoc(item)
 }
 
 export default getItem

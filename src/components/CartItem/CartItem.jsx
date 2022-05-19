@@ -1,4 +1,3 @@
-import { Button } from 'bootstrap'
 import React, { useContext } from 'react'
 import CartContext from '../../context/cart-context'
 import Bubble from '../Bubble/Bubble'

@@ -8,10 +8,15 @@ function ItemDetailContainer () {
     const { id } = useParams();
 
     useEffect(() => {
+
         getItem(id)
-            .then(res => {
-                setItem(res);
+            .then(snapshot => {
+                setItem({ ...snapshot.data(), id: snapshot.id });
             })
+            .catch(
+                err => console.log(err)
+            )
+
     }, [id]);
 
     return <>

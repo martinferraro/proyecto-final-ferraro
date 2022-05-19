@@ -1,4 +1,3 @@
-import React from 'react'
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
 function getProducts(category) {
