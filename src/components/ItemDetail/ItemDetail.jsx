@@ -15,7 +15,7 @@ function ItemDetail ({ item }) {
         <div className='d-flex justify-content-center'>
             <div className='itemCardDet card shadow mt-2 d-flex flex-row col-8 p-1'>
                 <div className='col-6 d-flex align-items-center'>
-                    <img src={ item?.pictureUrl } className='card-img-top img-fluid h-auto' alt='Imagen producto'/>
+                    <img src={ item?.pictureUrl } className='card-img-top img-fluid h-auto w-auto' alt='Imagen producto'/>
                 </div>
                 <div className='card-body d-flex flex-column justify-content-between col-6'>
                     <h4 className='card-title'>{ item?.title }</h4>
@@ -31,8 +31,6 @@ function ItemDetail ({ item }) {
                                     <button className='btnAddSub p-2 mb-2 w-100' onClick={() => console.log(cartCtxt.products)} >Imprimir Carrito</button>
                                 </div>
                                 <div className='w-100 ms-1'>
-                                    <button className='btnAddSub p-2 mb-2 w-100' onClick={() => cartCtxt.removeItem(item.id)} >Remover 1U</button>
-                                    <button className='btnAddSub p-2 mb-2 w-100' onClick={() => cartCtxt.removeItemComplete(item.id)} >Remover Item</button>
                                     <button className='btnAddSub p-2 mb-2 w-100' onClick={() => cartCtxt.clear()} >Vaciar Carrito</button>
                                 </div>
                             </div>

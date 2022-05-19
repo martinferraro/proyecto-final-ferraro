@@ -1,19 +1,29 @@
-import React from 'react'
-import './Item.css'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import CartContext from '../../context/cart-context'
+import './Item.css'
 
 function Item ({ item }) {
+    const cartCtxt = useContext(CartContext)
+
+    function addItem() {
+        cartCtxt.addItem({ quantity: 1, ...item })
+    }
+
     return <>
-        <div className='itemCard card shadow mt-2 mx-1'>
+        <div className='itemCard card shadow mt-2 mx-1 p-0 col-lg-3 col-sm-8'>
             <div className='imgCard d-flex justify-content-center'>
-                <img src={ item?.pictureUrl } className='card-img-top img-fluid' alt='Imagen producto'/>
+                <img className='card-img-top' src={ item?.pictureUrl } alt='Imagen producto'/>
             </div>
             <h5 className='card-body card-title pb-0 mb-0'>{ item?.title }</h5>
             <div className='card-body d-flex flex-column justify-content-end'>
                 <div className='d-flex justify-content-end mb-3'>
                     <p className='card-text'>Precio: ${ item?.price }</p>
                 </div>
-                <Link className='btnAddSub p-2 px-3' to={{pathname: `/item/${item.id}`}}>Ver detalle</Link>
+                <div className='d-flex justify-content-between'>
+                    <Link className='btnAddSub me-2 p-2 px-3 w-100' to={{pathname: `/item/${item.id}`}}>Detalle</Link>
+                    <button className='btnAddSub' onClick={ addItem }><i class="bi bi-cart-plus-fill"></i></button>
+                </div>
             </div>
         </div>
     </>
