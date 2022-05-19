@@ -7,13 +7,14 @@ import './ItemListContainer.css'
 function ItemListContainer() {
     const [products, setProducts] = useState([]);
     const { category } = useParams();
-    
-    useEffect(() => {
-        getProducts(category)
-            .then(res => {
-                setProducts(res);
-            })
-    }, [category]);
+
+    getProducts(category)
+        .then(snapshot => {
+            setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+        })
+        .catch(
+            err => console.log(err)
+        )
 
     return <>
         <div className='itemListContainer'>

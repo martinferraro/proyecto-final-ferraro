@@ -1,14 +1,14 @@
 import React from 'react'
-import dbProducts from '../../assets/dbProducts.js'
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
 function getProducts(category) {
-    const myPromise = new Promise((resolve, reject) => {
-        const productsFilter = category ? dbProducts.filter(p => p.category === category) : dbProducts
-        setTimeout(() => {
-            resolve(productsFilter);
-        }, 2000);
-    });
-    return myPromise;
+    const db = getFirestore();
+
+    const itemCollection = collection(db, 'items')
+
+    const q = category ? query(itemCollection, where('category', '==', category)) : query(itemCollection)
+
+    return getDocs(q)
 };
 
 export default getProducts
