@@ -1,3 +1,8 @@
 .itemListContainer {
     letter-spacing: .2rem;
+    margin-top: 3.5rem;
+}
+
+.itemList {
+    margin-top: 3.5rem;
 }

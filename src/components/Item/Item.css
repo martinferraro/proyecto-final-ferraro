@@ -10,6 +10,7 @@ h4, h5, h6 {
 .card-img-top {
     height: 100%;
     width: 100%;
+    filter: drop-shadow(.2rem .2rem .2rem #22222280);
 }
 
 .btnAddSub {
@@ -25,7 +26,7 @@ h4, h5, h6 {
 }
 
 .btnAddSub > .bi {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     letter-spacing: 0;
 }
 

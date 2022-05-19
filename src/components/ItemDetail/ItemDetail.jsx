@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
 import CartContext from '../../context/cart-context'
 import '../ItemCount/ItemCount.css'
+import './ItemDetail.css'
 
 function ItemDetail ({ item }) {
     const cartCtxt = useContext(CartContext)
@@ -12,7 +13,7 @@ function ItemDetail ({ item }) {
     }
 
     return <>
-        <div className='d-flex justify-content-center'>
+        <div className='contDetail d-flex justify-content-center'>
             <div className='itemCardDet card shadow mt-2 d-flex flex-row col-8 p-1'>
                 <div className='col-6 d-flex align-items-center'>
                     <img src={ item?.pictureUrl } className='card-img-top img-fluid h-auto w-auto' alt='Imagen producto'/>

@@ -28,3 +28,7 @@ a:hover {
 .btnAddSub > a {
     text-decoration: none;
 }
+
+.cart {
+    margin-top: 3.5rem;
+}

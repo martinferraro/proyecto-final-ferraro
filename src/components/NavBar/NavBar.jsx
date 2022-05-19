@@ -6,7 +6,7 @@ import './NavBar.css'
 
 function NavBar() {
     return <>
-        <nav className='navBar'>
+        <nav className='navBar fixed-top'>
             <Link className='contLogo ms-3' to={'/'}><img className='logoNav' src={Logo} alt='Daniela Ferraro'/></Link>
             <ul className='navMenu m-0'>
                 <Link className='menuItem' to={'/category/piel'}>Skin Care</Link>
