@@ -30,9 +30,6 @@ function ItemDetail ({ item }) {
                                     <button className='btnAddSub p-2 mb-2 w-100' onClick={() => console.log(cartCtxt.cartQty())} >Total en Carrito</button>
                                     <button className='btnAddSub p-2 mb-2 w-100' onClick={() => console.log(cartCtxt.products)} >Imprimir Carrito</button>
                                 </div>
-                                <div className='w-100 ms-1'>
-                                    <button className='btnAddSub p-2 mb-2 w-100' onClick={() => cartCtxt.clear()} >Vaciar Carrito</button>
-                                </div>
                             </div>
                             
                             {cartCtxt.products.length ?

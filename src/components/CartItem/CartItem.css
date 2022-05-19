@@ -2,10 +2,6 @@ h4, h5, h6 {
     color: #74748e;
 }
 
-.cartItemCard {
-    width: 19rem;
-}
-
 .cartImgCard {
     height: 15rem;
     width: auto
@@ -19,34 +15,15 @@ h4, h5, h6 {
 .btnAddSub {
     background-color: #74748e;
     border: none;
-    border-radius: .2rem;
+    border-radius: 1rem;
     color: white;
     font-size: 1rem;
     text-align: center;
     text-decoration: none;
-    letter-spacing: .2rem;
     transition: all .2s ease-in-out;
 }
 
 .btnAddSub:hover {
-    color: white;
-    background-color: #9bb992;
-    cursor: pointer;
-}
-
-.bubbleRemove {
-    background-color: #74748e;
-    border: none;
-    border-radius: 2rem;
-    padding: .5rem;
-    color: white;
-    font-size: .8rem;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all .2s ease-in-out;
-}
-
-.bubbleRemove:hover {
     color: white;
     background-color: #9bb992;
     cursor: pointer;
