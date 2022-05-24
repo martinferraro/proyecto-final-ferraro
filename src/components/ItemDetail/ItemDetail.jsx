@@ -25,20 +25,10 @@ function ItemDetail ({ item }) {
                         <h5 className='card-text pb-4'>Precio: ${ item?.price }</h5>
                         <div className=''>
                             <ItemCount stock={ item?.stock } initial={ 1 } onAdd={ addHandler } />
-                            {/* <div className='d-flex mt-2'>
-                                <div className='w-100 me-1'>
-                                    <button className='btnAddSub p-2 mb-2 w-100' onClick={() => console.log(cartCtxt.isInCart(item.id))} >En Carrito</button>
-                                    <button className='btnAddSub p-2 mb-2 w-100' onClick={() => console.log(cartCtxt.cartQty())} >Total en Carrito</button>
-                                    <button className='btnAddSub p-2 mb-2 w-100' onClick={() => console.log(cartCtxt.products)} >Imprimir Carrito</button>
-                                </div>
-                            </div> */}
-                            
                             {cartCtxt.products.length ?
-                                <button className='btnAddSub p-2 w-100 mt-2'>
-                                    <Link to={'/cart'}>
-                                        Finalizar compra ({ cartCtxt.cartQty() } items)
-                                    </Link>
-                                </button> : null
+                                <Link to={'/cart'}>
+                                    <button className='btnAddSub p-2 w-100 mt-2'>Ver en carrito ({ cartCtxt.cartQty() } items)</button>
+                                </Link> : null
                             }
                         </div>
                     </div>

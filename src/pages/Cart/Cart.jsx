@@ -8,21 +8,28 @@ function Cart() {
     const cartCtxt = useContext(CartContext)
 
     return <>
-        <div className="cart container d-flex flex-column align-items-center col-10">
-            {cartCtxt.products.map(p => <CartItem item={ p } key={ p.id }/>)}
+        <div className="cart container-fluid d-flex col-lg-10 col-md-12">
+            <div className="d-flex flex-column col-8 align-items-center">
+                {cartCtxt.products.map(p => <CartItem item={ p } key={ p.id }/>)}
+            </div>
             {cartCtxt.products.length !== 0 ?
-                <div className="contTotal container-fluid d-flex col-6 mt-3 align-items-center">
-                    <h6 className='col-8'>Importe total carrito: ${ cartCtxt.totalPrice() }</h6>
+                <div className="contTotal container d-flex flex-column col-3 mt-3 align-items-center">
+                    <h5>Importe total: ${ cartCtxt.totalPrice() }</h5>
                     <div className='w-100 ms-1'>
                         <button className='btnAddSub p-2 mb-2 w-100' onClick={() => cartCtxt.clear()} >Vaciar Carrito</button>
                     </div>
+                    <div className='w-100 ms-1'>
+                        <Link to='/checkout'>
+                            <button className='btnAddSub p-2 mb-2 w-100' >Finalizar compra</button>
+                        </Link>
+                    </div>
                 </div> : 
-                <>
+                <div className='d-flex flex-column align-items-center'>
                     <h4 className='my-3'>El carrito se encuentra vacío</h4>
-                    <button className='btnAddSub p-2 mb-2 w-50'>
-                        <Link to='/'>Inicio</Link>
-                    </button>
-                </>
+                    <Link to='/'>
+                        <button className='btnAddSub p-2 mb-2'>Inicio</button>
+                    </Link>
+                </div>
             }
         </div>
     </>

@@ -2,9 +2,8 @@ h4, h5, h6 {
     color: #74748e;
 }
 
-.cartImgCard {
-    height: 15rem;
-    width: auto
+.cartItemCard {
+    height: 12rem;
 }
 
 .card-img-top {
