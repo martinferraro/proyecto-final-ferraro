@@ -5,24 +5,24 @@ import ItemList from '../../components/ItemList/ItemList'
 import './ItemListContainer.css'
 
 function ItemListContainer() {
-    const [products, setProducts] = useState([]);
-    const { category } = useParams();
+    const [products, setProducts] = useState([])
+    const [isLoading, setLoading] = useState(true)
+    const { category } = useParams()
 
     useEffect(() => {
-
         getProducts(category)
         .then(snapshot => {
             setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+            setLoading(false)
         })
         .catch(
             err => console.log(err)
         )
-
     }, [category])
 
     return <>
         <div className='itemListContainer container'>
-            <ItemList items={ products } />
+            <ItemList isLoading ={isLoading} items={ products } />
         </div>
     </>
 }

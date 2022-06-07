@@ -8,12 +8,12 @@ function Cart() {
     const cartCtxt = useContext(CartContext)
 
     return <>
-        <div className="cart container-fluid d-flex col-lg-10 col-md-12">
-            <div className="d-flex flex-column col-8 align-items-center">
+        <div className="cart container-fluid d-flex flex-column col-lg-6 col-md-12">
+            <div className="d-flex flex-column align-items-center">
                 {cartCtxt.products.map(p => <CartItem item={ p } key={ p.id }/>)}
             </div>
             {cartCtxt.products.length !== 0 ?
-                <div className="contTotal container d-flex flex-column col-3 mt-3 align-items-center">
+                <div className="contTotal container d-flex flex-column col-4 mt-3 align-items-center">
                     <h5>Importe total: ${ cartCtxt.totalPrice() }</h5>
                     <div className='w-100 ms-1'>
                         <button className='btnAddSub p-2 mb-2 w-100' onClick={() => cartCtxt.clear()} >Vaciar Carrito</button>

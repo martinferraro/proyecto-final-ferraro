@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+import { Link } from 'react-router-dom'
 import CartContext from '../../context/cart-context'
 import { getFirestore, collection, addDoc } from 'firebase/firestore'
 import Spinner from 'react-bootstrap/Spinner'
@@ -7,7 +8,7 @@ import './Checkout.css'
 import { clear } from '@testing-library/user-event/dist/clear'
 
 const Checkout = () => {
-    const [load, setLoad] = useState(false)
+    const [isLoading, setLoad] = useState(false)
     const [orderID, setOrderID] = useState()
 
     const db = getFirestore();
@@ -26,7 +27,6 @@ const Checkout = () => {
         setBuyer(({
             ...buyer,
             [e.target.name]:e.target.value,
-
         }))
     }
 
@@ -41,6 +41,7 @@ const Checkout = () => {
         }
         catch (err) {
             console.log(err)
+            setLoad(false)
         }
     }
 
@@ -60,14 +61,14 @@ const Checkout = () => {
                 <h4 className=''>
                     Finalización de compra
                 </h4>
-                {load ?
+                { isLoading ?
                 <Spinner animation='border' role='status'>
                     <span className='visually-hidden'>Loading...</span>
                 </Spinner>
                 : (!orderID && 
                     <div className=''>
                         <h5>Completar datos:</h5>
-                        <form class='d-flex flex-column col-5' onSubmit={handleSubmit}>
+                        <form className='d-flex flex-column col-5' onSubmit={handleSubmit}>
                             <input className='form-control mb-2'
                                 type='text'
                                 name='name'
@@ -105,6 +106,9 @@ const Checkout = () => {
                         <div className='d-flex flex-column justify-content-center'>
                             <h6>¡Gracias por tu compra!</h6>
                             <h6>{`Tu código de seguimiento es el ${orderID}`}</h6>
+                            <Link to='/'>
+                                <button className='btnAddSub p-2 mt-2'>Continuar comprando</button>
+                            </Link>
                         </div>
                     )
                 }
