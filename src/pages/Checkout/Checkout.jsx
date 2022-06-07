@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import CartContext from '../../context/cart-context'
-import { getFirestore, collection, addDoc, doc, updateDoc } from 'firebase/firestore'
+import { getFirestore, collection, addDoc } from 'firebase/firestore'
 import Spinner from 'react-bootstrap/Spinner'
 
 import './Checkout.css'
