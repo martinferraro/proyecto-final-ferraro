@@ -19,10 +19,11 @@ const Checkout = () => {
     const [buyer, setBuyer] = useState({
         name: '',
         email: '',
+        emailVerify: '',
         phone: ''
     })
 
-    const {name, email, phone} = buyer
+    const {name, email, emailVerify, phone} = buyer
 
     const handleInputChange = (e) => {
         setBuyer(({
@@ -48,12 +49,20 @@ const Checkout = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const items = products.map( i => {return {id: i.id, title: i.title, price: i.price, quantity: i.quantity}})
-        const date = new Date()
-        const total = totalPrice()
-        const data = {buyer, items, date, total}
-        generateOrder(data)
-        cartCtxt.clear()
+        if (validateEmail(buyer.email, buyer.emailVerify) == true) {
+            const items = products.map( i => {return {id: i.id, title: i.title, price: i.price, quantity: i.quantity}})
+            const date = new Date()
+            const total = totalPrice()
+            const data = {buyer, items, date, total}
+            generateOrder(data)
+            cartCtxt.clear()
+        } else alert('Por favor, verifique su e-mail')
+    }
+
+    const validateEmail = (email, emailVerify) => {
+        if (email !== emailVerify) {
+            return false
+        } return true
     }
 
 
@@ -92,6 +101,14 @@ const Checkout = () => {
                                 name='email'
                                 placeholder='e-mail'
                                 value={email}
+                                onChange={handleInputChange}
+                                required
+                            />
+                            <input className='form-control mb-2'
+                                type='email'
+                                name='emailVerify'
+                                placeholder='Ingrese nuevamente su e-mail'
+                                value={emailVerify}
                                 onChange={handleInputChange}
                                 required
                             />
