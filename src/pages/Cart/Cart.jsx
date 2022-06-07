@@ -13,21 +13,23 @@ function Cart() {
                 {cartCtxt.products.map(p => <CartItem item={ p } key={ p.id }/>)}
             </div>
             {cartCtxt.products.length !== 0 ?
-                <div className="contTotal container d-flex flex-column col-4 mt-3 align-items-center">
+                <div className="contTotal container d-flex col-12 mt-3 align-items-center justify-content-around">
                     <h5>Importe total: ${ cartCtxt.totalPrice() }</h5>
-                    <div className='w-100 ms-1'>
-                        <button className='btnAddSub p-2 mb-2 w-100' onClick={() => cartCtxt.clear()} >Vaciar Carrito</button>
-                    </div>
-                    <div className='w-100 ms-1'>
-                        <Link to='/checkout'>
-                            <button className='btnAddSub p-2 mb-2 w-100' >Finalizar compra</button>
-                        </Link>
+                    <div className="col-5">
+                        <div className='w-100 ms-1'>
+                            <button className='btnAddSub p-2 mb-2 w-100' onClick={() => cartCtxt.clear()} >Vaciar Carrito</button>
+                        </div>
+                        <div className='w-100 ms-1'>
+                            <Link to='/checkout'>
+                                <button className='btnAddSub p-2 mb-2 w-100' >Finalizar compra</button>
+                            </Link>
+                        </div>
                     </div>
                 </div> : 
                 <div className='d-flex flex-column align-items-center'>
                     <h4 className='my-3'>El carrito se encuentra vacío</h4>
                     <Link to='/'>
-                        <button className='btnAddSub p-2 mb-2'>Inicio</button>
+                        <button className='btnAddSub p-2 mb-2'>Continuar comprando</button>
                     </Link>
                 </div>
             }

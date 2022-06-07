@@ -10,6 +10,7 @@ import { clear } from '@testing-library/user-event/dist/clear'
 const Checkout = () => {
     const [isLoading, setLoad] = useState(false)
     const [orderID, setOrderID] = useState()
+    const cartCtxt = useContext(CartContext)
 
     const db = getFirestore();
 
@@ -52,23 +53,24 @@ const Checkout = () => {
         const total = totalPrice()
         const data = {buyer, items, date, total}
         generateOrder(data)
+        cartCtxt.clear()
     }
 
 
     return (
         <>
-            <div className='checkout container-fluid d-flex flex-column'>
-                <h4 className=''>
-                    Finalización de compra
-                </h4>
+            <div className='checkout container-fluid d-flex flex-column align-items-center'>
                 { isLoading ?
-                <Spinner animation='border' role='status'>
+                <Spinner animation='border' role='status' variant='secondary'>
                     <span className='visually-hidden'>Loading...</span>
                 </Spinner>
                 : (!orderID && 
-                    <div className=''>
+                    <div className='col-5'>
+                        <h4 className=''>
+                            Finalización de compra
+                        </h4>
                         <h5>Completar datos:</h5>
-                        <form className='d-flex flex-column col-5' onSubmit={handleSubmit}>
+                        <form className='d-flex flex-column col-12' onSubmit={handleSubmit}>
                             <input className='form-control mb-2'
                                 type='text'
                                 name='name'
@@ -78,18 +80,18 @@ const Checkout = () => {
                                 required
                             />
                             <input className='form-control mb-2'
-                                type='email'
-                                name='email'
-                                placeholder='e-mail'
-                                value={email}
-                                onChange={handleInputChange}
-                                required
-                            />
-                            <input className='form-control mb-2'
                                 type='number'
                                 name='phone'
                                 placeholder='Teléfono'
                                 value={phone}
+                                onChange={handleInputChange}
+                                required
+                            />
+                            <input className='form-control mb-2'
+                                type='email'
+                                name='email'
+                                placeholder='e-mail'
+                                value={email}
                                 onChange={handleInputChange}
                                 required
                             />
@@ -103,7 +105,8 @@ const Checkout = () => {
                 }
                 {
                     orderID && (
-                        <div className='d-flex flex-column justify-content-center'>
+                        <div className='d-flex flex-column align-items-center'>
+                            <h4 className=''>Transacción finalizada con éxito</h4>
                             <h6>¡Gracias por tu compra!</h6>
                             <h6>{`Tu código de seguimiento es el ${orderID}`}</h6>
                             <Link to='/'>
