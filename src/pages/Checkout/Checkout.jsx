@@ -58,7 +58,7 @@ const Checkout = () => {
             generateOrder(data)
             cartCtxt.clear()
             setLista(false)
-        } else setVerify(false)
+        }
     }
 
     const validateEmail = (email, emailVerify) => {
@@ -136,8 +136,8 @@ const Checkout = () => {
                                 <div className='d-flex justify-content-between'>
                                     <p className='m-0'>Verifique su e-mail:</p>
                                     <>{ !validateEmail(email, emailVerify) ?
-                                        <p className='m-0 ms-2 text-danger'>Por favor verifique su e-mail</p>
-                                        : null
+                                        <p className='m-0 ms-2 text-danger'>Por favor verifique su e-mail para continuar</p>
+                                        : <p className='m-0 ms-2 text-success'>e-mail verificado</p>
                                     }</>
                                 </div>
                                 <input className='form-control mb-2'
