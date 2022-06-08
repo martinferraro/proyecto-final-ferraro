@@ -6,13 +6,11 @@ import Spinner from 'react-bootstrap/Spinner'
 
 import './Checkout.css'
 import { clear } from '@testing-library/user-event/dist/clear'
-import { FALSE } from 'sass'
 
 const Checkout = () => {
     const [isLoading, setLoad] = useState(false)
     const [orderID, setOrderID] = useState()
     const [lista, setLista] = useState(true)
-    const [verify, setVerify] = useState(false)
     const cartCtxt = useContext(CartContext)
 
     const db = getFirestore();
@@ -66,8 +64,7 @@ const Checkout = () => {
     const validateEmail = (email, emailVerify) => {
         if ((emailVerify === '') || (email !== emailVerify)) {
             return false
-        } setVerify(true)
-            return true
+        } return true
     }
 
 
@@ -138,7 +135,7 @@ const Checkout = () => {
                                 />
                                 <div className='d-flex justify-content-between'>
                                     <p className='m-0'>Verifique su e-mail:</p>
-                                    <>{ !verify ?
+                                    <>{ !validateEmail(email, emailVerify) ?
                                         <p className='m-0 ms-2 text-danger'>Por favor verifique su e-mail</p>
                                         : null
                                     }</>
