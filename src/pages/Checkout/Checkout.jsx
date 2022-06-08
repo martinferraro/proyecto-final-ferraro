@@ -6,11 +6,13 @@ import Spinner from 'react-bootstrap/Spinner'
 
 import './Checkout.css'
 import { clear } from '@testing-library/user-event/dist/clear'
+import { FALSE } from 'sass'
 
 const Checkout = () => {
     const [isLoading, setLoad] = useState(false)
     const [orderID, setOrderID] = useState()
     const [lista, setLista] = useState(true)
+    const [verify, setVerify] = useState(false)
     const cartCtxt = useContext(CartContext)
 
     const db = getFirestore();
@@ -58,13 +60,14 @@ const Checkout = () => {
             generateOrder(data)
             cartCtxt.clear()
             setLista(false)
-        } else alert('Por favor, verifique que los correos ingresados sean idénticos')
+        } else setVerify(false)
     }
 
     const validateEmail = (email, emailVerify) => {
         if ((emailVerify === '') || (email !== emailVerify)) {
             return false
-        } return true
+        } setVerify(true)
+            return true
     }
 
 
@@ -81,13 +84,13 @@ const Checkout = () => {
                                 {products.map(p => (
                                     <div className='d-flex justify-content-between'>
                                         <p className='col-6'>{p.title}</p>
-                                        <p className='col-2 text-end'>Cant: {p.quantity}</p>
-                                        <p className='col-4 text-end'>Importe: ${p.price}</p>
+                                        <p className='col-2 text-end'>Cantidad: {p.quantity}</p>
+                                        <p className='col-4 text-end'>Precio Unitario: ${p.price}</p>
                                     </div>
                                 ))}
                             </div>
                             <div className="d-flex justify-content-between">
-                                <h6 className='container text-end p-2 bg-light'>Estás realizando la compra de { cartCtxt.cartQty() } productos, por ${ cartCtxt.totalPrice() } </h6>
+                                <h6 className='container text-end p-2 bg-light'>Estás realizando una compra de { cartCtxt.cartQty() } unidades, por ${ cartCtxt.totalPrice() } </h6>
                             </div>
                         </div>
                     </div>
@@ -135,8 +138,8 @@ const Checkout = () => {
                                 />
                                 <div className='d-flex justify-content-between'>
                                     <p className='m-0'>Verifique su e-mail:</p>
-                                    <>{ validateEmail(email, emailVerify) ?
-                                        <p className='m-0 ms-2 text-success'><i className="bi bi-check me-2"></i>e-mail verificado</p>
+                                    <>{ !verify ?
+                                        <p className='m-0 ms-2 text-danger'>Por favor verifique su e-mail</p>
                                         : null
                                     }</>
                                 </div>
@@ -163,7 +166,7 @@ const Checkout = () => {
                                 <h6>¡Gracias por tu compra!</h6>
                                 <h6>{`Tu código de seguimiento es el ${orderID}`}</h6>
                                 <Link to='/'>
-                                    <button className='btnAddSub p-2 mt-2'>Continuar comprando</button>
+                                    <button className='btnAddSub p-2 mt-2 px-4'>Continuar comprando</button>
                                 </Link>
                             </div>
                         )
