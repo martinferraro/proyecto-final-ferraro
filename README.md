@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="350px" src="" />
+  <img width="350px" src="https://user-images.githubusercontent.com/97345843/172713885-01435db7-29aa-4bc7-a771-865d459df93f.svg" />
 </p>
 
 # E-Commerce de productos de belleza de Daniela Ferraro
@@ -13,7 +13,7 @@ El acceso al carrito de compras es mediante el ícono en la barra de navegación
 
 ## Demo navegación
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/97345843/166596115-0a2df0ac-2c26-4b53-9ac7-7ee2ebb85271.gif" />
+  <img src="https://user-images.githubusercontent.com/97345843/172713762-71b83af9-9f60-4d41-8d80-4ef5b1881528.gif" />
 </p>
 
 ## Directorios y archivos
