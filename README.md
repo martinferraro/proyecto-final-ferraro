@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="350px" src="(https://user-images.githubusercontent.com/97345843/172714578-98df05be-3d91-400e-bc2c-96c29f6e7714.svg)" />
+  <img width="350px" src="https://user-images.githubusercontent.com/97345843/166584632-52297161-342b-48de-8ab8-e628e07c6dfb.svg" />
 </p>
 
 # E-Commerce de productos de belleza de Daniela Ferraro
