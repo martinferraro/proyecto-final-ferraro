@@ -4,14 +4,16 @@ import getItem from '../../components/GetItem/GetItem'
 import ItemDetail from '../../components/ItemDetail/ItemDetail'
 
 function ItemDetailContainer () {
-    const [item, setItem] = useState({});
-    const { id } = useParams();
+    const [item, setItem] = useState({})
+    const [isLoading, setLoading] = useState(true)
+    const { id } = useParams()
 
     useEffect(() => {
 
         getItem(id)
             .then(snapshot => {
-                setItem({ ...snapshot.data(), id: snapshot.id });
+                setItem({ ...snapshot.data(), id: snapshot.id })
+                setLoading(false)
             })
             .catch(
                 err => console.log(err)
@@ -21,7 +23,7 @@ function ItemDetailContainer () {
 
     return <>
         <div className='itemDetailContainer'>
-            <ItemDetail item={ item } />
+            <ItemDetail isLoading ={isLoading} item={ item } />
         </div>
     </>
 }

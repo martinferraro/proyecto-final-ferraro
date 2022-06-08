@@ -12,3 +12,7 @@
 .cartWidget:hover {
     transform: scale(1.2);
 }
+
+.cartWidgetEmptyContainer {
+    width: 56px;
+}

@@ -18,7 +18,7 @@ function Item ({ item }) {
                 </div>
                 <div className='d-flex justify-content-between'>
                     <Link className='btnAddSub me-2 p-2 px-3 w-100' to={{pathname: `/item/${item.id}`}}>Detalle</Link>
-                    <button className='btnAddSub' onClick={ () => cartCtxt.addItem({ quantity: 1, ...item }) }><i class="bi bi-cart-plus-fill"></i></button>
+                    <button className='btnAddSub' onClick={ () => cartCtxt.addItem({ quantity: 1, ...item }) }><i className="bi bi-cart-plus-fill"></i></button>
                 </div>
             </div>
         </div>

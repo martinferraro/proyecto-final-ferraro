@@ -16,7 +16,9 @@ function CartWidget() {
                         <Bubble>{ cartCtxt.cartQty() }</Bubble>
                     </div>
                 </Link>
-            </div> : null
+            </div>
+            :
+            <div className='cartWidgetEmptyContainer'></div>
         }
     </>
 }

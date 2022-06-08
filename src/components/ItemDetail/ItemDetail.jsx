@@ -2,10 +2,12 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
 import CartContext from '../../context/cart-context'
+import Spinner from 'react-bootstrap/Spinner'
+
 import '../ItemCount/ItemCount.css'
 import './ItemDetail.css'
 
-function ItemDetail ({ item }) {
+function ItemDetail ({ item, isLoading }) {
     const cartCtxt = useContext(CartContext)
 
     function addHandler(quantityToAdd) {
@@ -13,6 +15,13 @@ function ItemDetail ({ item }) {
     }
 
     return <>
+    { isLoading ?
+        <div className='d-flex justify-content-center'>
+            <Spinner animation='border' role='status' variant='secondary'>
+                <span className='visually-hidden'></span>
+            </Spinner>
+        </div>
+        :
         <div className='contDetail d-flex justify-content-center'>
             <div className='itemCardDet card shadow mt-2 d-flex flex-row col-8 p-1'>
                 <div className='col-6 d-flex align-items-center'>
@@ -35,6 +44,7 @@ function ItemDetail ({ item }) {
                 </div>
             </div>
         </div>
+    }
     </>
 }
 
